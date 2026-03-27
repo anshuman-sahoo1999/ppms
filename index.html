@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Performance Management System | Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-left">
+            <img src="Images/Logo/Odisha Govt.png" alt="Odisha Govt Logo" class="logo">
+            <img src="Images/Logo/WATCO.png" alt="WATCO Logo" class="logo">
+        </div>
+        <div class="header-center">
+            <h1>Project Performance Management System</h1>
+        </div>
+        <div class="header-right">
+            <div class="credits">
+                <span>Designed & Developed by</span>
+                <img src="Images/Logo/emc-logo.png" alt="Ecometrix Logo" class="emc-logo">
+                <span class="emc-name">Ecometrix Consultants Pvt. Ltd.</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="card-container">
+            <div class="card" id="card-bhubaneswar" data-url="https://ppms-review.onrender.com/">
+                <div class="card-bg" style="background-image: url('Images/Area/Bhubaneswar.jpeg');"></div>
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <h2>Bhubaneswar Sewerage - PPMS</h2>
+                </div>
+            </div>
+
+            <div class="card" id="card-sambalpur" data-url="#">
+                <div class="card-bg" style="background-image: url('Images/Area/Sambalpur.jpg');"></div>
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <h2>Sambalpur Water Supply - PPMS</h2>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <p>&copy; <span id="current-year"></span> Project Performance Management System. All Rights Reserved.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="https://www.odisha.gov.in/" target="_blank">Govt. of Odisha</a></li>
+                    <li><a href="https://watcoodisha.in/" target="_blank">Water Corporation of Odisha</a></li>
+                    <li><a href="https://owssb.nic.in/" target="_blank">OWSSB, Odisha</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Policies</h3>
+                <ul>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Security Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section footer-credits">
+                <p>Designed and Developed by,</p>
+                <strong>Ecometrix Consultants Pvt. Ltd.</strong>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Redirect Modal -->
+    <div id="redirectModal" class="modal">
+        <div class="modal-content">
+            <h3>Redirect Confirmation</h3>
+            <p>You are being redirected to the PPMS portal. Do you wish to continue?</p>
+            <div class="modal-buttons">
+                <button id="confirmYes" class="btn btn-yes">Yes</button>
+                <button id="confirmNo" class="btn btn-no">No</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
