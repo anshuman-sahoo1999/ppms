@@ -24,6 +24,41 @@ body {
     flex-direction: column;
 }
 
+/* Top Navigation / Language Switcher */
+.top-nav {
+    background-color: #f0f0f0;
+    padding: 5px 40px;
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid #ddd;
+}
+
+.lang-switcher {
+    display: flex;
+    gap: 10px;
+}
+
+.lang-btn {
+    background: none;
+    border: 1px solid transparent;
+    padding: 2px 10px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: var(--transition);
+    color: #555;
+    font-weight: 500;
+}
+
+.lang-btn:hover {
+    color: var(--primary-color);
+}
+
+.lang-btn.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
 /* Header Styles */
 .main-header {
     background: var(--white);
@@ -285,6 +320,23 @@ body {
 
 .btn-no:hover {
     background-color: #ddd;
+}
+
+.modal-warning {
+    margin-top: 20px;
+    font-weight: 700;
+    color: #d9534f;
+    font-size: 0.9rem;
+    padding-top: 15px;
+    border-top: 1px dashed #eee;
+}
+
+.blinking-text {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
 }
 
 /* Responsive Styles */
