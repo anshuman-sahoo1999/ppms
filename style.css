@@ -27,10 +27,17 @@ body {
 /* Top Navigation / Language Switcher */
 .top-nav {
     background-color: #f0f0f0;
-    padding: 5px 40px;
+    padding: 8px 40px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: 1px solid #ddd;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.datetime-container {
+    font-weight: 500;
 }
 
 .lang-switcher {
@@ -264,14 +271,39 @@ body {
 
 .modal-content {
     background-color: var(--white);
-    margin: 15% auto;
+    margin: 10% auto;
     padding: 30px;
     border-radius: 15px;
     width: 90%;
-    max-width: 450px;
+    max-width: 500px;
     text-align: center;
     box-shadow: 0 15px 50px rgba(0,0,0,0.3);
     animation: modalSlide 0.3s ease;
+}
+
+.policy-modal {
+    max-width: 800px;
+    text-align: left;
+}
+
+.policy-text {
+    margin: 20px 0;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 15px;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #444;
+}
+
+.policy-text h4 {
+    color: var(--primary-color);
+    margin: 20px 0 10px;
+}
+
+.policy-text ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
 }
 
 @keyframes modalSlide {

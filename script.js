@@ -17,8 +17,25 @@ document.addEventListener('DOMContentLoaded', () => {
             'modal-title': 'Redirect Confirmation',
             'btn-yes': 'Yes',
             'btn-no': 'No',
+            'btn-close': 'Close',
             'modal-warning': 'Authorized Access Only!',
-            'modal-msg': 'You are being redirected to the {portal} Portal. Do you wish to continue?'
+            'modal-msg': 'You are being redirected to the {portal} Portal. Do you wish to continue?',
+            'terms-content': `
+                <h4>1. Acceptance of Terms</h4>
+                <p>By accessing this portal, you agree to comply with all applicable laws and regulations of the Government of Odisha.</p>
+                <h4>2. Authorized Access</h4>
+                <p>Access is strictly limited to registered personnel of Odisha Govt, WATCO, OWSSB, and authorized consultants. Unauthorized use is a punishable offense.</p>
+                <h4>3. Intellectual Property</h4>
+                <p>All content, including data, logos, and reports, are the property of the respective government bodies and Ecometrix Consultants.</p>
+            `,
+            'security-content': `
+                <h4>1. Data Protection</h4>
+                <p>We implement industry-standard encryption to protect data in transit and at rest within the PPMS ecosystem.</p>
+                <h4>2. User Responsibility</h4>
+                <p>Users must maintain the confidentiality of their login credentials. Any security breach must be reported immediately.</p>
+                <h4>3. Monitoring</h4>
+                <p>All system access and activities are logged and monitored to prevent unauthorized or malicious activities.</p>
+            `
         },
         'or': {
             'header-title': 'ପ୍ରକଳ୍ପ ପ୍ରଦର୍ଶନ ପରିଚାଳନା ପ୍ରଣାଳୀ',
@@ -36,12 +53,52 @@ document.addEventListener('DOMContentLoaded', () => {
             'modal-title': 'ପୁନର୍ନିଦ୍ଦେଶ ନିଶ୍ଚିତକରଣ',
             'btn-yes': 'ହଁ',
             'btn-no': 'ନାଁ',
+            'btn-close': 'ବନ୍ଦ କରନ୍ତୁ',
             'modal-warning': 'କେବଳ ଅଧିକୃତ ପ୍ରବେଶ!',
-            'modal-msg': 'ଆପଣଙ୍କୁ {portal} ପୋର୍ଟାଲ୍‌କୁ ପୁନର୍ନିଦ୍ଦେଶିତ କରାଯାଉଛି। ଆପଣ ଜାରି ରଖିବାକୁ ଚାହୁଁଛନ୍ତି କି?'
+            'modal-msg': 'ଆପଣଙ୍କୁ {portal} ପୋର୍ଟାଲ୍‌କୁ ପୁନର୍ନିଦ୍ଦେଶିତ କରାଯାଉଛି। ଆପଣ ଜାରି ରଖିବାକୁ ଚାହୁଁଛନ୍ତି କି?',
+            'terms-content': `
+                <h4>୧. ନିୟମାବଳୀର ଗ୍ରହଣ</h4>
+                <p>ଏହି ପୋର୍ଟାଲ୍ ବ୍ୟବହାର କରି, ଆପଣ ଓଡ଼ିଶା ସରକାରଙ୍କ ସମସ୍ତ ପ୍ରଯୁଜ୍ୟ ନିୟମ ଏବଂ ନିୟମାବଳୀ ପାଳନ କରିବାକୁ ସମ୍ମତି ପ୍ରଦାନ କରୁଛନ୍ତି।</p>
+                <h4>୨. ଅଧିକୃତ ପ୍ରବେଶ</h4>
+                <p>ପ୍ରବେଶ କେବଳ ଓଡ଼ିଶା ସରକାର, WATCO, OWSSB ଏବଂ ଅଧିକୃତ ପରାମର୍ଶଦାତାଙ୍କ ପାଇଁ କଡ଼ାକଡ଼ି ଭାବରେ ସୀମିତ। ଅନଧିକୃତ ବ୍ୟବହାର ଏକ ଦଣ୍ଡନୀୟ ଅପରାଧ।</p>
+                <h4>୩. ବୌଦ୍ଧିକ ସମ୍ପତ୍ତି</h4>
+                <p>ସମସ୍ତ ବିଷୟବସ୍ତୁ, ତଥ୍ୟ, ଲୋଗୋ ଏବଂ ରିପୋର୍ଟ ସମ୍ପୃକ୍ତ ସରକାରୀ ସଂସ୍ଥା ଏବଂ Ecometrix Consultants ର ସମ୍ପତ୍ତି।</p>
+            `,
+            'security-content': `
+                <h4>୧. ତଥ୍ୟ ସୁରକ୍ଷା</h4>
+                <p>ଆମ୍ଭେ PPMS ପରିସଂସ୍ଥା ମଧ୍ୟରେ ତଥ୍ୟର ସୁରକ୍ଷା ପାଇଁ ଶିଳ୍ପ-ମାନକ ଏନକ୍ରିପସନ୍ ବ୍ୟବହାର କରୁଛୁ।</p>
+                <h4>୨. ବ୍ୟବହାରକାରୀଙ୍କ ଦାୟିତ୍ୱ</h4>
+                <p>ବ୍ୟବହାରକାରୀମାନେ ସେମାନଙ୍କର ଲଗଇନ୍ ବିବରଣୀର ଗୋପନୀୟତା ରକ୍ଷା କରିବା ଆବଶ୍ୟକ। ଯଦି କୌଣସି ସୁରକ୍ଷା ସମ୍ବନ୍ଧୀୟ ସମସ୍ୟା ଦେଖାଦିଏ, ତେବେ ତୁରନ୍ତ ସୂଚନା ଦିଅନ୍ତୁ।</p>
+                <h4>୩. ନିରୀକ୍ଷଣ</h4>
+                <p>ଅନଧିକୃତ ବା କ୍ଷତିକାରକ କାର୍ଯ୍ୟକଳାପକୁ ରୋକିବା ପାଇଁ ସମସ୍ତ ପ୍ରବେଶକୁ ଲଗ୍ ଏବଂ ନିରୀକ୍ଷଣ କରାଯାଇଥାଏ।</p>
+            `
         }
     };
 
     let currentLang = 'en';
+
+    // Dynamic Clock Function
+    const updateClock = () => {
+        const now = new Date();
+        const options = { 
+            weekday: 'short', 
+            year: 'numeric', 
+            month: 'short', 
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: true
+        };
+        const dateTimeString = now.toLocaleDateString(currentLang === 'en' ? 'en-US' : 'or-IN', options);
+        const datetimeEl = document.getElementById('datetime');
+        if (datetimeEl) {
+            datetimeEl.textContent = dateTimeString;
+        }
+    };
+
+    setInterval(updateClock, 1000);
+    updateClock();
 
     // Set dynamic year in footer
     const yearSpan = document.getElementById('current-year');
@@ -50,31 +107,47 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Modal elements
-    const modal = document.getElementById('redirectModal');
+    const modals = document.querySelectorAll('.modal');
+    const redirectModal = document.getElementById('redirectModal');
+    const termsModal = document.getElementById('termsModal');
+    const securityModal = document.getElementById('securityModal');
+    
     const modalMsg = document.getElementById('modal-message');
+    const termsContent = document.getElementById('terms-content');
+    const securityContent = document.getElementById('security-content');
+    
     const btnYes = document.getElementById('confirmYes');
     const btnNo = document.getElementById('confirmNo');
     let pendingUrl = '';
 
     // Language switcher logic
     const updateContent = (lang) => {
+        currentLang = lang;
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
             if (translations[lang] && translations[lang][key]) {
                 el.textContent = translations[lang][key];
             }
         });
-        currentLang = lang;
+        
+        // Update Policy Contents
+        if (termsContent) termsContent.innerHTML = translations[lang]['terms-content'];
+        if (securityContent) securityContent.innerHTML = translations[lang]['security-content'];
         
         // Update active button state
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.classList.remove('active');
         });
         document.getElementById(`lang-${lang}`).classList.add('active');
+        
+        updateClock(); // Refresh clock to match language
     };
 
     document.getElementById('lang-en').addEventListener('click', () => updateContent('en'));
     document.getElementById('lang-or').addEventListener('click', () => updateContent('or'));
+
+    // Initialize policy contents
+    updateContent('en');
 
     // Handle card clicks
     const cards = document.querySelectorAll('.card');
@@ -88,8 +161,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const msgTemplate = translations[currentLang]['modal-msg'];
             modalMsg.textContent = msgTemplate.replace('{portal}', portalName);
             
-            modal.style.display = 'block';
+            redirectModal.style.display = 'block';
         });
+    });
+
+    // Handle Policy Clicks
+    document.getElementById('link-terms').addEventListener('click', () => {
+        termsModal.style.display = 'block';
+    });
+
+    document.getElementById('link-security').addEventListener('click', () => {
+        securityModal.style.display = 'block';
     });
 
     // Modal YES redirect
@@ -100,20 +182,24 @@ document.addEventListener('DOMContentLoaded', () => {
             const alertMsg = currentLang === 'en' ? 'This portal is under development.' : 'ଏହି ପୋର୍ଟାଲ୍ ବର୍ତ୍ତମାନ ବିକାଶାଧୀନ ଅଛି।';
             alert(alertMsg);
         }
-        modal.style.display = 'none';
+        redirectModal.style.display = 'none';
     });
 
-    // Modal NO cancel
-    btnNo.addEventListener('click', () => {
-        modal.style.display = 'none';
-        pendingUrl = '';
+    // Modal close handlers
+    document.querySelectorAll('.close-modal, #confirmNo').forEach(btn => {
+        btn.addEventListener('click', () => {
+            modals.forEach(m => m.style.display = 'none');
+            pendingUrl = '';
+        });
     });
 
     // Close modal if clicking outside content
     window.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-            pendingUrl = '';
-        }
+        modals.forEach(m => {
+            if (event.target === m) {
+                m.style.display = 'none';
+                pendingUrl = '';
+            }
+        });
     });
 });

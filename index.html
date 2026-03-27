@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to the Project Performance Management System</title>
+    <title>Project Performance Management System | Landing Page</title>
+    <link rel="icon" type="image/png" href="Images/Logo/Odisha Govt.png">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +14,9 @@
 
 <body>
     <div class="top-nav">
+        <div class="datetime-container">
+            <span id="datetime"></span>
+        </div>
         <div class="lang-switcher">
             <button id="lang-en" class="lang-btn active">English</button>
             <button id="lang-or" class="lang-btn">ଓଡ଼ିଆ</button>
@@ -76,8 +80,8 @@
             <div class="footer-section">
                 <h3 data-i18n="policies">Policies</h3>
                 <ul>
-                    <li><a href="#" data-i18n="terms">Terms & Conditions</a></li>
-                    <li><a href="#" data-i18n="security">Security Policy</a></li>
+                    <li><a href="javascript:void(0)" id="link-terms" data-i18n="terms">Terms & Conditions</a></li>
+                    <li><a href="javascript:void(0)" id="link-security" data-i18n="security">Security Policy</a></li>
                 </ul>
             </div>
             <div class="footer-section footer-credits">
@@ -100,7 +104,28 @@
         </div>
     </div>
 
+    <!-- Terms & Conditions Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content policy-modal">
+            <h3 data-i18n="terms">Terms & Conditions</h3>
+            <div class="policy-text" id="terms-content"></div>
+            <div class="modal-buttons">
+                <button class="btn btn-no close-modal" data-i18n="btn-close">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Security Policy Modal -->
+    <div id="securityModal" class="modal">
+        <div class="modal-content policy-modal">
+            <h3 data-i18n="security">Security Policy</h3>
+            <div class="policy-text" id="security-content"></div>
+            <div class="modal-buttons">
+                <button class="btn btn-no close-modal" data-i18n="btn-close">Close</button>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
-
 </html>
