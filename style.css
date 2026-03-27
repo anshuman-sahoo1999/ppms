@@ -379,6 +379,10 @@ body {
 }
 
 @media (max-width: 768px) {
+    .top-nav {
+        padding: 8px 15px;
+    }
+
     .main-header {
         flex-direction: column;
         padding: 20px;
