@@ -6,6 +6,9 @@
     --white: #ffffff;
     --glass-bg: rgba(255, 255, 255, 0.8);
     --transition: all 0.3s ease;
+    --footer-sky: linear-gradient(165deg, #a8daf5 0%, #7ec8e8 45%, #6bb8e0 100%);
+    --footer-text: #1a3a52;
+    --footer-link: #004a99;
 }
 
 * {
@@ -70,13 +73,34 @@ body {
 .main-header {
     background: var(--white);
     padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
+    overflow: hidden;
+    transition: box-shadow 0.35s ease, background-color 0.35s ease;
+}
+
+.main-header.is-scrolled {
+    box-shadow: 0 8px 28px rgba(0, 74, 153, 0.12);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.header-parallax {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    transition: transform 0.15s ease-out;
+    will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .header-parallax {
+        transition: none;
+    }
 }
 
 .header-left {
@@ -212,24 +236,98 @@ body {
 
 /* Footer Styles */
 .main-footer {
-    background: #1a1a1a;
-    color: #ddd;
-    padding: 60px 40px 30px;
+    background: var(--footer-sky);
+    color: var(--footer-text);
+    padding: 48px 40px 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.45);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
+    grid-template-columns: minmax(260px, 1.15fr) minmax(200px, 0.9fr) minmax(180px, 0.85fr) minmax(160px, 0.75fr);
+    gap: 36px;
+    align-items: start;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.footer-section h3 {
-    color: var(--white);
-    margin-bottom: 20px;
-    font-size: 1.1rem;
+.footer-brand {
+    padding-right: 12px;
+}
+
+.footer-logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 18px;
+}
+
+.footer-logo {
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 2px 8px rgba(0, 50, 90, 0.12));
+}
+
+.footer-logo-odisha {
+    height: 72px;
+    width: auto;
+    max-width: 140px;
+}
+
+.footer-logo-watco {
+    height: 72px;
+    width: 72px;
+    border-radius: 50%;
+    box-shadow: 0 2px 12px rgba(0, 74, 153, 0.15);
+}
+
+.footer-designed {
+    font-size: 0.82rem;
     font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--footer-text);
+    opacity: 0.9;
+    margin-bottom: 12px;
+}
+
+.footer-emc {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.footer-logo-emc {
+    height: 44px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+}
+
+.footer-address {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--footer-text);
+    opacity: 0.92;
+    max-width: 22rem;
+}
+
+.footer-copy .footer-copyright {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--footer-text);
+    opacity: 0.88;
+}
+
+.footer-section h3 {
+    color: var(--footer-text);
+    margin-bottom: 16px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
 }
 
 .footer-section ul {
@@ -241,19 +339,16 @@ body {
 }
 
 .footer-section ul li a {
-    color: #aaa;
+    color: var(--footer-link);
     text-decoration: none;
     transition: var(--transition);
+    font-weight: 500;
 }
 
 .footer-section ul li a:hover {
     color: var(--secondary-color);
-}
-
-.footer-credits strong {
-    color: var(--secondary-color);
-    display: block;
-    margin-top: 5px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 /* Modal Styles */
@@ -378,14 +473,27 @@ body {
     }
 }
 
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
 @media (max-width: 768px) {
     .top-nav {
         padding: 8px 15px;
     }
 
     .main-header {
-        flex-direction: column;
         padding: 20px;
+    }
+
+    .header-parallax {
+        flex-direction: column;
         gap: 15px;
     }
 
@@ -396,10 +504,37 @@ body {
     .header-center h1 {
         font-size: 1.4rem;
         margin-bottom: 10px;
+        text-align: center;
     }
 
     .header-left .logo {
         height: 50px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+    .footer-logos {
+        justify-content: center;
+    }
+
+    .footer-emc {
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-address {
+        max-width: none;
+    }
+
+    .footer-copy .footer-copyright {
+        text-align: center;
     }
 
     .card-container {

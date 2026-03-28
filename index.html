@@ -22,19 +22,21 @@
             <button id="lang-or" class="lang-btn">ଓଡ଼ିଆ</button>
         </div>
     </div>
-    <header class="main-header">
-        <div class="header-left">
-            <img src="Images/Logo/Odisha Govt.png" alt="Odisha Govt Logo" class="logo">
-            <img src="Images/Logo/WATCO.png" alt="WATCO Logo" class="logo">
-        </div>
-        <div class="header-center">
-            <h1 data-i18n="header-title">Project Performance Management System</h1>
-        </div>
-        <div class="header-right">
-            <div class="credits">
-                <span data-i18n="designed-by">Designed & Developed by</span>
-                <img src="Images/Logo/emc-logo.png" alt="Ecometrix Logo" class="emc-logo">
-                <span class="emc-name">Ecometrix Consultants Pvt. Ltd.</span>
+    <header class="main-header" id="main-header">
+        <div class="header-parallax" id="header-parallax">
+            <div class="header-left">
+                <img src="Images/Logo/Odisha Govt.png" alt="Odisha Govt Logo" class="logo">
+                <img src="Images/Logo/WATCO.png" alt="WATCO Logo" class="logo">
+            </div>
+            <div class="header-center">
+                <h1 data-i18n="header-title">Project Performance Management System</h1>
+            </div>
+            <div class="header-right">
+                <div class="credits">
+                    <span data-i18n="designed-by">Designed & Developed by</span>
+                    <img src="Images/Logo/emc-logo.png" alt="Ecometrix Logo" class="emc-logo">
+                    <span class="emc-name">Ecometrix Consultants Pvt. Ltd.</span>
+                </div>
             </div>
         </div>
     </header>
@@ -63,18 +65,29 @@
 
     <footer class="main-footer">
         <div class="footer-grid">
-            <div class="footer-section">
-                <p>&copy; <span id="current-year"></span> <span data-i18n="footer-copy">Project Performance Management
+            <div class="footer-section footer-brand">
+                <div class="footer-logos">
+                    <img src="Images/Logo/Odisha Govt.png" alt="Government of Odisha" class="footer-logo footer-logo-odisha">
+                    <img src="Images/Logo/WATCO.png" alt="WATCO" class="footer-logo footer-logo-watco">
+                </div>
+                <p class="footer-designed" data-i18n="designed-by">Designed & Developed by</p>
+                <div class="footer-emc">
+                    <img src="Images/Logo/emc-logo.png" alt="Ecometrix Consultants" class="footer-logo-emc">
+                    <p class="footer-address" data-i18n="footer-address">Ecometrix Consultants Pvt. Ltd, DLF Cybercity, Patia, Bhubaneswar.</p>
+                </div>
+            </div>
+            <div class="footer-section footer-copy">
+                <p class="footer-copyright">&copy; <span id="current-year"></span> <span data-i18n="footer-copy">Project Performance Management
                         System. All Rights Reserved.</span></p>
             </div>
             <div class="footer-section">
                 <h3 data-i18n="quick-links">Quick Links</h3>
                 <ul>
-                    <li><a href="https://www.odisha.gov.in/" target="_blank" data-i18n="link-govt">Govt. of Odisha</a>
+                    <li><a href="https://www.odisha.gov.in/" target="_blank" rel="noopener noreferrer" data-i18n="link-govt">Govt. of Odisha</a>
                     </li>
-                    <li><a href="https://watcoodisha.in/" target="_blank" data-i18n="link-watco">Water Corporation of
+                    <li><a href="https://watcoodisha.in/" target="_blank" rel="noopener noreferrer" data-i18n="link-watco">Water Corporation of
                             Odisha</a></li>
-                    <li><a href="https://owssb.nic.in/" target="_blank" data-i18n="link-owssb">OWSSB, Odisha</a></li>
+                    <li><a href="https://owssb.nic.in/" target="_blank" rel="noopener noreferrer" data-i18n="link-owssb">OWSSB, Odisha</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -83,10 +96,6 @@
                     <li><a href="javascript:void(0)" id="link-terms" data-i18n="terms">Terms & Conditions</a></li>
                     <li><a href="javascript:void(0)" id="link-security" data-i18n="security">Security Policy</a></li>
                 </ul>
-            </div>
-            <div class="footer-section footer-credits">
-                <p data-i18n="designed-by">Designed and Developed by,</p>
-                <strong>Ecometrix Consultants Pvt. Ltd.</strong>
             </div>
         </div>
     </footer>

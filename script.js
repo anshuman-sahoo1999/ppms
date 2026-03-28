@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'card-bhu': 'Bhubaneswar Sewerage - PPMS',
             'card-sam': 'Sambalpur Water Supply - PPMS',
             'footer-copy': 'Project Performance Management System. All Rights Reserved.',
+            'footer-address': 'Ecometrix Consultants Pvt. Ltd, DLF Cybercity, Patia, Bhubaneswar.',
             'quick-links': 'Quick Links',
             'link-govt': 'Govt. of Odisha',
             'link-watco': 'Water Corporation of Odisha',
@@ -43,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'card-bhu': 'ଭୁବନେଶ୍ୱର ସ୍ୱେରେଜ୍ - PPMS',
             'card-sam': 'ସମ୍ବଲପୁର ଜଳ ଯୋଗାଣ - PPMS',
             'footer-copy': 'ପ୍ରକଳ୍ପ ପ୍ରଦର୍ଶନ ପରିଚାଳନା ପ୍ରଣାଳୀ। ସମସ୍ତ ଅଧିକାର ସଂରକ୍ଷିତ।',
+            'footer-address': 'Ecometrix Consultants Pvt. Ltd, DLF ସାଇବରସିଟି, ପାଟିଆ, ଭୁବନେଶ୍ୱର।',
             'quick-links': 'ଶୀଘ୍ର ଲିଙ୍କ୍',
             'link-govt': 'ଓଡ଼ିଶା ସରକାର',
             'link-watco': 'ଓଡ଼ିଶା ଜଳ ନିଗମ (WATCO)',
@@ -202,4 +204,38 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Header: scroll-based styling + cursor parallax (respect reduced motion)
+    const mainHeader = document.getElementById('main-header');
+    const headerParallax = document.getElementById('header-parallax');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const onScrollHeader = () => {
+        if (!mainHeader) return;
+        const y = window.scrollY || document.documentElement.scrollTop;
+        mainHeader.classList.toggle('is-scrolled', y > 12);
+    };
+
+    window.addEventListener('scroll', onScrollHeader, { passive: true });
+    onScrollHeader();
+
+    if (mainHeader && headerParallax && !reduceMotion) {
+        let raf = 0;
+        const maxShift = 10;
+
+        mainHeader.addEventListener('mousemove', (e) => {
+            if (raf) cancelAnimationFrame(raf);
+            raf = requestAnimationFrame(() => {
+                const rect = mainHeader.getBoundingClientRect();
+                const nx = (e.clientX - rect.left) / rect.width - 0.5;
+                const ny = (e.clientY - rect.top) / rect.height - 0.5;
+                headerParallax.style.transform =
+                    `translate(${nx * maxShift}px, ${ny * maxShift * 0.65}px)`;
+            });
+        });
+
+        mainHeader.addEventListener('mouseleave', () => {
+            headerParallax.style.transform = '';
+        });
+    }
 });
